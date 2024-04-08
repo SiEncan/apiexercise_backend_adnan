@@ -138,8 +138,8 @@ async function changePassword(id, oldPass, newPass) {
     return null;
   }
 
-  const passwordChecked = await passwordMatched(oldPass, user.password);
-  if (!passwordChecked) {
+  const passwordValid = await passwordMatched(oldPass, user.password);
+  if (!passwordValid) {
     throw errorResponder(
       errorTypes.INVALID_CREDENTIALS,
       'Password Lama Tidak Sesuai'
