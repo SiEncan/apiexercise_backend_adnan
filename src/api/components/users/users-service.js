@@ -115,8 +115,8 @@ async function deleteUser(id) {
  * @returns {boolean}
  */
 async function isDupli(email) {
-  const findUserByMail = await usersRepository.getUserByEmail(email);
-  if (findUserByMail) {
+  const user = await usersRepository.getUserByEmail(email);
+  if (user) {
     return true;
   } else {
     return false;
