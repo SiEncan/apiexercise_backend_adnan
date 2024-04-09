@@ -63,12 +63,12 @@ async function deleteUser(id) {
 }
 
 /**
- * Find an email
- * @param {string} inputMail - User mail
+ * Get user by email
+ * @param {string} inputMail - User Email
  * @returns {Promise}
  */
-async function findMail(inputMail){
-  return User.findOne({email: inputMail})
+async function getUserByEmail(inputMail) {
+  return User.findOne({ email: inputMail });
 }
 
 /**
@@ -84,7 +84,7 @@ async function changePassword(id, newPass) {
     },
     {
       $set: {
-        password : newPass
+        password: newPass,
       },
     }
   );
@@ -96,6 +96,6 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
-  findMail,
+  getUserByEmail,
   changePassword,
 };
